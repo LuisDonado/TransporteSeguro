@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TransporteSeguro.Data;
+
 namespace TransporteSeguro
 {
 	public class Program
@@ -8,6 +11,11 @@ namespace TransporteSeguro
 
 			// Add services to the container.
 			builder.Services.AddRazorPages();
+
+			builder.Services.AddDbContext<TransporteSeguroContext>(options =>
+				options.UseSqlServer(builder.Configuration.GetConnectionString("TransporteSeguroDB"))
+
+			);
 
 			var app = builder.Build();
 
