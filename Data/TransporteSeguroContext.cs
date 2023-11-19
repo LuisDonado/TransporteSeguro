@@ -11,6 +11,6 @@ namespace TransporteSeguro.Data
 		}
 
 		public DbSet<Cliente> Clientes { get; set; }
-		public DbSet<ServicioTransporte> ServiciosTransporte { get; set; }
+		public DbSet<ServicioTransporte> ServiciodeTransportes { get; set; }
 	}
 }

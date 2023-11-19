@@ -29,18 +29,18 @@ namespace TransporteSeguro.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ServiciosTransporte",
+                name: "ServiciodeTransportes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Conductor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ClienteNombre = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    NombreCliente = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ServiciosTransporte", x => x.Id);
+                    table.PrimaryKey("PK_ServiciodeTransportes", x => x.Id);
                 });
         }
 
@@ -51,7 +51,7 @@ namespace TransporteSeguro.Migrations
                 name: "Clientes");
 
             migrationBuilder.DropTable(
-                name: "ServiciosTransporte");
+                name: "ServiciodeTransportes");
         }
     }
 }
