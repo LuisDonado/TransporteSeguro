@@ -1,0 +1,44 @@
+﻿@page
+@model TransporteSeguro.Pages.ServiciodeTransportes.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit</h1>
+
+<h4>ServicioTransporte</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <input type="hidden" asp-for="ServicioTransporte.Id"/>
+           <div class="form-group">
+               <label asp-for="ServicioTransporte.Fecha" class="control-label"></label>
+               <input asp-for="ServicioTransporte.Fecha" class="form-control"/>
+               <span asp-validation-for="ServicioTransporte.Fecha" class="text-danger"></span>
+           </div>
+           <div class="form-group">
+                <label asp-for="ServicioTransporte.Conductor" class="control-label"></label>
+                <input asp-for="ServicioTransporte.Conductor" class="form-control" />
+                <span asp-validation-for="ServicioTransporte.Conductor" class="text-danger"></span>
+           </div>
+            <div class="form-group">
+                <label asp-for="ServicioTransporte.NombreCliente" class="control-label"></label>
+                <input asp-for="ServicioTransporte.NombreCliente" class="form-control" />
+                <span asp-validation-for="ServicioTransporte.NombreCliente" class="text-danger"></span>
+           </div>
+           <div class="form-group">
+               <input type="submit" value="Save" class="btn btn-success"/>
+               <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+           </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
