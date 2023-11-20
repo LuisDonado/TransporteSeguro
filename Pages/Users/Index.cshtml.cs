@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using TransporteSeguro.Data;
 using TransporteSeguro.Models;
 
+
 namespace TransporteSeguro.Pages.Users
 {
     [Authorize]

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransporteSeguro.Data;
 
@@ -11,9 +12,11 @@ using TransporteSeguro.Data;
 namespace TransporteSeguro.Migrations
 {
     [DbContext(typeof(TransporteSeguroContext))]
-    partial class TransporteSeguroContextModelSnapshot : ModelSnapshot
+    [Migration("20231120023239_Users")]
+    partial class Users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

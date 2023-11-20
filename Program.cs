@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TransporteSeguro.Consultas;
 using TransporteSeguro.Data;
 
 namespace TransporteSeguro
@@ -11,6 +12,14 @@ namespace TransporteSeguro
 
 			// Add services to the container.
 			builder.Services.AddRazorPages();
+
+			builder.Services.AddScoped<UserConsulta>();
+
+			builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+			{
+				options.Cookie.Name = "MyCookieAuth";
+			});
+
 
 			builder.Services.AddDbContext<TransporteSeguroContext>(options =>
 				options.UseSqlServer(builder.Configuration.GetConnectionString("TransporteSeguroDB"))
